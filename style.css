@@ -1,0 +1,474 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #1a1a1a; color: white; }
+/* --- Ecrã Inicial --- */
+.home-bg {
+ background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)),
+ 
+ background-size: cover;
+ background-position: center;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+.menu-container { padding: 20px;}
+.hamburger { font-size: 30px; cursor: pointer; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.hidden { display: none; }
+#nav-menu { background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px;
+width: 90%; margin: 10px auto; }
+#nav-menu a { display: block; color: black; padding: 10px; text-decoration: none; fontweight: bold; }
+.hero-content {
+ flex-grow: 1;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ 
+}
+.main-logo { width: 120px; border-radius: 20px; margin-bottom: 20px; }
+/* --- Página PAP --- */
+/* Garantir que o header e a main da página PAP centralizam tudo */
+header { text-align: center; padding: 30px 20px 10px 20px;
+font: 900 clamp(1em, 10vw, 2em) exo, sans-serif;
+
+}
+header .bio { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 5px; }
+.links-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 20px;
+}
+.pap-content {
+ text-align: center;
+    }
+
+.pap-image { width: 90%; max-width: 400px; display: block; margin: 0 auto 20px auto;
+border-radius: 15px; }
+.pap-text { font-size: 16px; line-height: 1.6; max-width: 500px; margin: 0 auto;
+padding: 10px; text-align: justify; }
+/* Botão e Rodapé */
+.cssbuttons-io-button {
+  background: #FFFFFF;
+  color: black;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #000000;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+    margin-top: 50px;
+}
+
+.cssbuttons-io-button .icon {
+  background: black;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #000000;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #FFFFFF;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+html, body { display: grid }
+html { height: 100% }
+body { background: #222 }
+
+.loading-text {
+  padding-bottom: 70px;
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+
+	-webkit-background-clip: text;
+	        background-clip: text;
+
+	color: transparent;
+	font: 900 clamp(4em, 10vw, 10em) exo, sans-serif;
+	animation: shimmer 2s linear infinite
+  
+}
+
+@keyframes shimmer { to { background-position: 100% } }
+
+/* avoid problems in high contrast mode */
+@media (forced-colors: active) {
+  p {
+    background: #212121;
+    color: aquamarine
+  }
+}
+
+.back-video {
+    position: fixed;
+    right: 1;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+    margin-top:10px;
+}
+
+.fundo{
+    width:320px;
+    background:rgba(0,0,0,0.5);
+    padding:15px;
+    border-radius:25px;
+    backdrop-filter:blur(6px);
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.sobre {
+  
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+
+	-webkit-background-clip: text;
+	        background-clip: text;
+
+	color: transparent;
+	font: 900 clamp(1.5em, 11vw, 10em) exo, sans-serif;
+	animation: shimmer 2s linear infinite;
+ padding-bottom:10px;
+
+
+  
+}
+
+.sobra {
+  
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+
+	-webkit-background-clip: text;
+	        background-clip: text;
+
+	color: transparent;
+	font: 900 clamp(1.5em, 11vw, 10em) exo, sans-serif;
+	animation: shimmer 2s linear infinite;
+ 
+
+ padding-top: 0%;
+ position: sticky;
+ top: 60px;
+
+
+  
+}
+
+
+
+
+
+@import url(https://fonts.bunny.net/css?family=just-me-again-down-here:400);
+@layer base, mouse, demo;
+
+@layer demo {
+  @property --rotate {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+ 
+  .a {
+    height: 1000svh;
+    margin: 0;
+   
+    animation: --page-rotate 1s linear;
+    animation-timeline: scroll(nearest block);
+  
+    /** this allows us to rotate to exactly each card.
+    BUT, it either needs to be set via JS or hardcoded as we can't accesss the .wrapper sibling-count() value  from the body */
+    --cards: 20;
+		animation-timing-function: steps(var(--cards)); 
+  }
+  
+  @keyframes --page-rotate {
+    to { --rotate: 1; }
+  }
+  
+  .wrapper {
+    --card-border-radius: 14px;
+    --cards: sibling-count();
+    --card-width: max(350px, 20vw);
+   
+    
+    --card-height: calc(var(--card-width) * 6 / 4);
+    /* radius large enough so cards don't overlap */
+    --radius: calc(var(--card-width) * var(--cards) / (2 * 3.1416));
+
+    
+    font-family: 'Just Me Again Down Here', handwriting;
+    position: fixed;
+    width: calc(var(--radius) * 2);
+    height: calc(var(--radius) * 9.5);
+  
+    /* center circle so top card is visible */
+    top: calc(50% + var(--radius) + var(--card-height) * 2);
+    left: 50%;
+    transform-origin: center center;
+    transform: translateX(-50%) rotate(calc(var(--rotate) * 360deg));
+    transition: transform 300ms linear;
+    /*zoom: .3;*/
+    & > div {
+      --card-i: sibling-index();
+      
+      /* card position around circle*/
+      --card-offset-radius: circle(var(--radius) at 50% 50%);
+      --card-offset-distance: calc((var(--card-i) - 1) / var(--cards) * 100%);
+    
+      /* current card positioning relative to --rotate to detect "top" card */
+      --card-phase: calc((var(--card-i) - 1) / var(--cards) - 0.75);
+      --card-pos: mod(calc(var(--card-phase) + var(--rotate) + 1), 1);
+      --card-dist: min(var(--card-pos),calc(1 - var(--card-pos)));
+      
+      --card-grayscale: clamp(0, calc(var(--card-dist) * var(--cards)), 1);
+      --card-opacity: calc(1 - (var(--card-dist) / 0.15 ));
+    
+      /* blur */
+      --card-focus-range: .1;
+      --card-max-blur: 7px;
+      --card-norm-dist: min(var(--card-dist), var(--card-focus-range));
+      --card-blur-progress: calc(var(--card-norm-dist) / var(--card-focus-range));
+      --card-blur: calc(var(--card-blur-progress) * var(--card-max-blur));
+    
+      /* caption */
+      --caption-active: clamp(0, 1 - (var(--card-dist) / 0.001), 1);
+      --caption-opacity: var(--caption-active);
+      --caption-y: calc(-150px * (1 - var(--caption-active)));
+    
+      
+      filter: blur(var(--card-blur)) grayscale(var(--card-grayscale));
+      opacity: var(--card-opacity);
+      container: size;
+      
+      offset-path: var(--card-offset-radius);
+      offset-distance: var(--card-offset-distance);
+      offset-rotate: auto;
+      offset-anchor: 50% 100%;
+    
+      position: absolute;
+      width: var(--card-width);
+      aspect-ratio: 4/6;
+      object-fit: cover;
+      border-radius: var(--card-border-radius);
+      transition: all 300ms ease-in-out;
+      transform-origin: center calc(var(--card-height) * 2 * -1);
+      /*
+      &::before{
+        content: counter(i);
+        counter-reset: i var(--caption-opacity);
+      }
+      */
+      &::after {
+        content: attr(data-title);
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        opacity: var(--caption-opacity);
+        translate: 0 var(--caption-y);
+        font-size: clamp(0rem, 2vw + 0.045rem,1.6rem);
+        z-index: -1;
+        transition: opacity 300ms ease-in-out,translate 300ms ease-in-out;
+      }
+      & > img{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        border-radius: inherit;
+      }  
+    }
+  }
+}
+
+@layer mouse{
+  
+  .mouse {
+		position: fixed;
+		bottom:1rem;
+		left: 50%;
+    translate: -50% 0;
+		display: block;
+		width: 50px;
+		height: 50px;
+		opacity: 1;
+    color:var(--mouse-color);
+     display: none;
+		animation-name: mouse;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-timeline: scroll(nearest block);
+    @supports  (animation-timeline: scroll()) {
+      display: block;
+    }
+	}
+	@keyframes mouse {
+		75% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+
+  /* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: light dark;
+		--bg-dark: rgb(16, 24, 40);
+		--bg-light: rgb(248, 244, 238);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245););
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+    --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
+ 
+	.b {
+		background-color: var(--clr-bg);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 2rem;
+		font-family: system, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+		& > * {
+			/*outline: 1px dashed red;*/
+		}
+	}
+	.c {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+	@supports  not (animation-timeline: scroll()) {
+	 body::before {
+			content:"Sorry, your browser doesn't support animation-timeline";
+			position: fixed;
+			top: 2rem;
+			left: 50%;
+			translate: -50% 0;
+			font-size: 0.8rem;
+		}
+	}
+}
+
+
+
+.para {
+  position:fixed;
+}
+
+/* CSS */
+.button-7 {
+  top: 84%;
+  left: 38%;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: 900 clamp(1.5em, 11vw, 10em) exo, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-7:hover,
+.button-7:focus {
+  background-color: #07c;
+}
+
+.button-7:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}

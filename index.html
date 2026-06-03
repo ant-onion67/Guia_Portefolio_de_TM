@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Multimédia</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+ <link rel="stylesheet" href="style.css">
+ <link rel="manifest" href="manifest.json">
+</head>
+<body class="home-bg">
+ <div class="menu-container">
+ <div class="hamburger" onclick="toggleMenu()">☰</div>
+ <nav id="nav-menu" class="hidden">
+  <a href="index.html">Home</a>
+ <a href="curso.html">Sobre o Curso</a>
+ <a href="portfolio.html" target="_blank">
+Portfólio</a>
+ <a href="https://www.aecister.pt/ensino-profissional">Mais informação</a>
+ </nav>
+ </div>
+ <main class="hero-content">
+
+  <div class="loading-text">Multimédia</div>
+
+  <video autoplay loop muted plays-inline class="back-video">
+                <source src="assets/images/video.mp4" type="video/mp4">
+        </video>
+ 
+
+ </main>
+
+ <script>
+ function toggleMenu() {
+ document.getElementById('nav-menu').classList.toggle('hidden');
+ }
+ </script>
+</body>
+</html>
