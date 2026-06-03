@@ -249,7 +249,7 @@ body { background: #222 }
   .wrapper {
     --card-border-radius: 14px;
     --cards: sibling-count();
-    --card-width: max(350px, 20vw);
+    --card-width: max(250px, 20vw);
    
     
     --card-height: calc(var(--card-width) * 6 / 4);
@@ -433,7 +433,7 @@ body { background: #222 }
 /* CSS */
 .button-7 {
   top: 84%;
-  left: 38%;
+  left: 30%;
   background-color: #0095ff;
   border: 1px solid transparent;
   border-radius: 3px;
