@@ -1,0 +1,24 @@
+{
+  "short_name": "MultimédiaPWA",
+  "name": "Guia e Portefólio do Curso Técnico de Multimédia",
+  "description": "Roteiro interativo e portefólio modular do curso profissional de Multimédia.",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#0f0f1a",
+  "theme_color": "#1a1a2e",
+  "display": "standalone",
+  "orientation": "portrait"
+}

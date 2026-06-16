@@ -1,0 +1,479 @@
+/* -------------------------------------------------------------
+   VARIÁVEIS DE DESIGN & RESET CORE
+------------------------------------------------------------- */
+:root {
+    --bg-main: #0f0f1a;
+    --bg-card: #1a1a2e;
+    --bg-accent: #e94560;
+    --text-primary: #ffffff;
+    --text-secondary: #b2bec3;
+    --nav-height: 65px;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: calc(var(--nav-height) + 20px); /* Espaço extra para a barra mobile */
+}
+
+/* -------------------------------------------------------------
+   HEADER & NAVEGAÇÃO MOBILE-FIRST (ESTILO APP BAR)
+------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   HEADER & NAVEGAÇÃO MOBILE-FIRST (ESTILO APP BAR)
+------------------------------------------------------------- */
+header {
+    background-color: rgba(26, 26, 46, 0.95); /* Fundo escuro com leve transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro desfocado super moderno */
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    bottom: 0; /* Fixado perfeitamente na base do telemóvel */
+    left: 0;
+    width: 100%;
+    height: 65px; /* Altura ideal para o polegar */
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header .logo {
+    display: none; /* Ocultado em mobile */
+}
+
+/* Transforma o menu num contentor Flexbox perfeito */
+#main-nav {
+    display: flex;
+    justify-content: space-around; /* Distribui os botões com espaço igual entre eles */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+}
+
+/* Estilo individual de cada botão da barra */
+.nav-btn {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* Espaço entre o topo e o texto */
+    transition: all 0.3s ease;
+    border-top: 3px solid transparent; /* Evita que o layout salte quando ativo */
+}
+
+/* Estilo do botão quando está selecionado */
+.nav-btn.active {
+    color: var(--bg-accent);
+    background: linear-gradient(to top, rgba(233, 69, 96, 0.05), transparent);
+    border-top: 3px solid var(--bg-accent);
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------
+   CONTROLO DE VISTAS (SPA)
+------------------------------------------------------------- */
+main {
+    padding: 20px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------
+   VISTA 1: HOME
+------------------------------------------------------------- */
+.hero {
+    background: linear-gradient(135deg, #16213e, #1a1a2e);
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--bg-accent);
+}
+
+.hero h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--bg-accent);
+}
+
+.cards-grid {
+    display: block;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    cursor: pointer;
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--bg-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-right: 60px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* -------------------------------------------------------------
+   VISTA 2: ANOS & MÓDULOS
+------------------------------------------------------------- */
+.view-header {
+    margin-bottom: 25px;
+}
+
+.view-header h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Alterado para Flexbox para distribuir o espaço uniformemente */
+.filter-bar {
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4px; /* Pequena margem interna para os botões respirarem */
+}
+
+/* Ajustado para crescer igualmente e ter espaçamento interno */
+.filter-btn {
+    flex: 1; /* Faz com que cada botão ocupe exatamente a mesma largura */
+    text-align: center;
+    padding: 14px 0; /* Aumentado ligeiramente para ser mais fácil de tocar no telemóvel */
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px; /* Cantos ligeiramente arredondados no botão ativo */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn.active {
+    background-color: var(--bg-accent);
+    color: white;
+}
+
+.disciplina-wrapper {
+    margin-bottom: 25px;
+}
+
+.disciplina-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    padding-left: 8px;
+    border-left: 3px solid var(--text-secondary);
+}
+
+.modulo-item {
+    background-color: var(--bg-card);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.modulo-header {
+    display: table;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.modulo-code {
+    display: table-cell;
+    width: 70px;
+    font-weight: bold;
+    color: var(--bg-accent);
+    font-size: 13px;
+}
+
+.modulo-name {
+    display: table-cell;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.modulo-desc {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    margin-top: 4px;
+}
+
+/* -------------------------------------------------------------
+   VISTA 3: GALERIA
+------------------------------------------------------------- */
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.galeria-grid {
+    margin-top: 20px;
+}
+
+.galeria-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media-placeholder {
+    height: 180px;
+    background-color: #252542;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.media-placeholder span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-family: monospace;
+}
+
+.galeria-info {
+    padding: 16px;
+}
+
+.badge-ano {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.galeria-card h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.galeria-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* -------------------------------------------------------------
+   NOTIFICAÇÃO OFFLINE TOAST
+------------------------------------------------------------- */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background-color: #32ff7e;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 2000;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast.offline {
+    background-color: #ff3838;
+    color: #fff;
+}
+
+/* -------------------------------------------------------------
+   ADAPTAÇÃO DESKTOP (ECRÃS MAIORES)
+------------------------------------------------------------- */
+@media (min-width: 768px) {
+    body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 90px; /* Dá espaço suficiente para o conteúdo passar por trás da barra sem ser tapado */
+    -webkit-tap-highlight-color: transparent;
+}
+
+    header {
+        top: 0;
+        bottom: auto;
+        height: 70px;
+        display: block;
+        padding: 0 40px;
+        border-top: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    header .logo {
+        display: block;
+        float: left;
+        line-height: 70px;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+    
+    header .logo span {
+        color: var(--bg-accent);
+    }
+
+    #main-nav {
+        display: block;
+        float: right;
+        height: 70px;
+    }
+
+    .nav-btn {
+        display: inline-block;
+        line-height: 70px;
+        padding: 0 24px;
+        height: 70px;
+        font-size: 15px;
+    }
+
+    .nav-btn.active {
+        border-top: none;
+        border-bottom: 3px solid var(--bg-accent);
+    }
+
+    .cards-grid {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 16px 0;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .card {
+        display: table-cell;
+        margin-bottom: 0;
+        vertical-align: top;
+    }
+
+    .galeria-grid {
+        display: block;
+    }
+    
+    .galeria-card {
+    background-color: var(--bg-card);
+    border-radius: 14px; /* Cantos ligeiramente mais arredondados estilo iOS/Android */
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+    .media-placeholder {
+        display: table-cell;
+        width: 40%;
+        height: 160px;
+        vertical-align: middle;
+    }
+
+    .galeria-info {
+        display: table-cell;
+        width: 60%;
+        vertical-align: top;
+        padding: 20px;
+    }
+}
+
+/* Garante que as imagens dos teus projetos ficam responsivas e proporcionais */
+.galeria-img {
+    width: 100%;
+    height: 200px; /* Altura ligeiramente maior para valorizar os teus prints */
+    object-fit: cover; /* Faz com que a imagem preencha o espaço perfeitamente sem achatar */
+    display: block;
+}
+
+/* Ajuste para ecrãs maiores (Desktop) */
+@media (min-width: 768px) {
+    .galeria-img {
+        display: table-cell;
+        width: 100%;
+        height: 200px;
+    }
+}
