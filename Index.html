@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Multimédia | Guia & Portefólio</title>
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Multimédia PWA">
+</head>
+<body>
+
+    <header>
+        <div class="logo">TM<span>.</span></div>
+        <nav id="main-nav">
+            <button class="nav-btn active" onclick="switchView('home')">Home</button>
+            <button class="nav-btn" onclick="switchView('anos')">Anos</button>
+            <button class="nav-btn" onclick="switchView('galeria')">Galeria</button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="view-home" class="view active">
+            <div class="hero">
+                <h1>Curso Técnico de Multimédia</h1>
+                <p>Explora o roteiro interativo do nosso curso, conhece todas as disciplinas e descobre os projetos práticos desenvolvidos pelos alunos ao longo dos 3 anos.</p>
+            </div>
+            
+            <div class="section-title">Navegar por Anos</div>
+            <div class="cards-grid">
+                <div class="card card-ano" onclick="openYear(1)">
+                    <div class="card-badge">1º Ano</div>
+                    <h3>Fundamentos & Iniciação</h3>
+                    <p>Os fundamentos da criação visual digital, da animação e das tecnologias que permitem a partilha de conteúdos multimédia.</p>
+                </div>
+                <div class="card card-ano" onclick="openYear(2)">
+                    <div class="card-badge">2º Ano</div>
+                    <h3>Desenvolvimento & Narrativa</h3>
+                    <p>Desenvolvimento de competências em modelação 3D, programação para a web e animações interativas.</p>
+                </div>
+                <div class="card card-ano" onclick="openYear(3)">
+                    <div class="card-badge">3º Ano</div>
+                    <h3>Áudio & Vídeo</h3>
+                    <p>Aperfeiçoamento das técnicas de edição, tratamento e pós-produção de áudio e vídeo para projetos multimédia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-anos" class="view">
+            <div class="view-header">
+                <h2>Anos letivos</h2>
+                <div class="filter-bar">
+                    <button id="btn-yr1" class="filter-btn active" onclick="filterYear(1)">1º Ano</button>
+                    <button id="btn-yr2" class="filter-btn" onclick="filterYear(2)">2º Ano</button>
+                    <button id="btn-yr3" class="filter-btn" onclick="filterYear(3)">3º Ano</button>
+                </div>
+            </div>
+
+            <div id="modules-container"></div>
+        </section>
+
+        <section id="view-galeria" class="view">
+            <div class="view-header">
+                <h2>Galeria de Projetos</h2>
+                <p class="subtitle">Exemplos de trabalhos realizados nas disciplinas técnicas.</p>
+            </div>
+
+
+            <div class="galeria-grid">
+                <div class="galeria-card">
+    <img src="assets/images/Foto1.png" alt="Trabalho de Stop-Motion" class="galeria-img">
+    
+    <div class="galeria-info">
+        <span class="badge-ano">1º Ano</span>
+        <h4>Edição Bitmap</h4>
+        <p>Ediçao de uma imagem sem cores.</p>
+    </div>
+</div>
+                </div>
+
+                <div class="galeria-card">
+    <img src="assets/images/Foto4.png" alt="Trabalho de Stop-Motion" class="galeria-img">
+    
+    <div class="galeria-info">
+        <span class="badge-ano">2º Ano</span>
+        <h4>Edição 3d</h4>
+        <p>Criação de uma casa famosa no blender em 3D</p>
+    </div>
+                </div>
+
+              <div class="galeria-card">
+    <img src="assets/images/Foto2.png" alt="Trabalho de Stop-Motion" class="galeria-img">
+    
+    <div class="galeria-info">
+        <span class="badge-ano">2º Ano</span>
+        <h4>Edição de Som</h4>
+        <p>Tratamento de som na aplição do Audacity</p>
+    </div>
+                </div>
+
+               <div class="galeria-card">
+    <img src="assets/images/Foto3.png" alt="Trabalho de Stop-Motion" class="galeria-img">
+    
+    <div class="galeria-info">
+        <span class="badge-ano">3º Ano</span>
+        <h4>Pós-Produção de Vídeo</h4>
+        <p>Tratamento de vídeos com o programa premiere da adobe</p>
+    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="offline-toast" class="toast">Estás em modo Offline. A carregar dados locais da Cache.</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
